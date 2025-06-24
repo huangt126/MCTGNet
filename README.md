@@ -10,3 +10,5 @@ A Multi-Scale Convolution and Hybrid AttentionNetwork for Robust Motor Imagery E
 	By introducing a group rational Kolmogorov–Arnold Network (GR-KAN), the system enhances generalization and robustness under cross-session conditions.
 	Experiments on the BCI Competition IV 2a and 2b datasets demonstrate that MCTGNet achieves average classification accuracies of \textbf{88.93\%} and \textbf{91.42\%}, respectively, outperforming \textcolor{red}{state-of-the-art} methods by \textbf{3.32\%} and \textbf{1.83\%}. \textcolor{red}{The source code has been released at \url{https://github.com/huangt126/MCTGNet}.}
 }
+
+We would like to thank all those who have contributed to this work. Thank you!
