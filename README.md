@@ -1,4 +1,4 @@
-# MTCGNet
+# MCTGNet
 A Multi-Scale Convolution and Hybrid AttentionNetwork for Robust Motor Imagery EEG Decoding
 \abstract{Motor imagery (MI) EEG decoding is a key application in brain-computer interface (BCI) research. In cross-session scenarios, the generalization and robustness of decoding models are particularly challenged due to the complex nonlinear dynamics of MI-EEG signals in both temporal and frequency domains, as well as distributional shifts across different recording sessions.
 	While multi-scale feature extraction is a promising approach for generalized and robust MI decoding,
