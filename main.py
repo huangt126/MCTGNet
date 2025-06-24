@@ -21,8 +21,6 @@ os.environ["CUDA_VISIBLE_DEVICES"] = '0'
 cudnn.benchmark = False
 cudnn.deterministic = True
 
-
-# ExP类，用于实验相关
 class ExP():
     def __init__(self, nsub, data_dir, result_name,
                  epochs=2000,
@@ -102,14 +100,14 @@ class ExP():
     # Segmentation and Reconstruction (S&R)数据增强
     def interaug(self, timg, label):
         """
-        对输入的图像和标签进行增强，生成用于训练的增强数据和对应的标签。
+        对输入数据进行增强，生成用于训练的增强数据和对应的标签。
 
         参数:
-        timg: 输入的图像数据，形状为(batch_size, 1, number_channel, 1000)。
-        label: 输入的标签数据，形状为(batch_size,)。
+        timg: 输入的数据，形状为(batch_size, 1, number_channel, 1000)。
+        label: 输入的数据，形状为(batch_size,)。
 
         返回:
-        aug_data: 增强后的图像数据，转换为PyTorch张量并移动到GPU上。
+        aug_data: 增强后的数据，转换为PyTorch张量并移动到GPU上。
         aug_label: 增强后的标签数据，转换为PyTorch张量并移动到GPU上。
         """
         # 初始化增强数据和标签的列表
@@ -334,7 +332,6 @@ class ExP():
         np.save(os.path.join(self.results_dir, f'predictions_subject_{self.nSub}.npy'), y_pred)
         np.save(os.path.join(self.results_dir, f'true_labels_subject_{self.nSub}.npy'), y_true)
 
-        # 保存最佳准确率
         with open(os.path.join(self.results_dir, f'best_accuracy_subject_{self.nSub}.txt'), 'w') as f:
             f.write(f"Best Epoch: {best_epoch}\n")
             f.write(f"Best Test Accuracy: {best_test_acc:.4f}\n")
@@ -473,7 +470,7 @@ if __name__ == "__main__":
         DATA_DIR = r'/root/'
         EVALUATE_MODE = 'LOSO-No'  # leaving one subject out subject-dependent  subject-indenpedent
 
-        N_SUBJECT = 54  # BCI
+        N_SUBJECT = 9  # BCI
         N_AUG = 2  # 数据增强次数用于生成人工训练数据集
         N_SEG = 8  # S&R的分割次数
 
